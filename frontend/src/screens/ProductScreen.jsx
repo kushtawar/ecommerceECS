@@ -11,6 +11,7 @@ import {
   Card,
   Button,
   Form,
+  ListGroupItem,
 } from 'react-bootstrap';
 
 const ProductScreen = () => {
@@ -71,8 +72,19 @@ const ProductScreen = () => {
               <ListGroup.Item>
                 <Row>
                   <Col>Qty</Col>
-                  <Col></Col>
+                  <Col>{product.countInStock}</Col>
                 </Row>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <div className="d-flex justify-content-center">
+                  <Button
+                    className="btn-block"
+                    type="button"
+                    disabled={product.countInStock === 0}
+                  >
+                    Add To Cart
+                  </Button>
+                </div>
               </ListGroup.Item>
             </ListGroup>
           </Card>

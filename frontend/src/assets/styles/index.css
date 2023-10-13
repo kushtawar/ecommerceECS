@@ -69,3 +69,8 @@ table th {
   text-align: left;
   padding: 0.25em;
 }
+
+.footer-text {
+  font-size: 0.5em;
+  font-style: italic;
+}
