@@ -51,3 +51,21 @@ table th {
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
 }
+.wincobold {
+  font-family: 'winco', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.screenmainheader {
+  --bs-text-rgb: #c13c90; /* Replace with your custom color values */
+  color: var(--bs-text-rgb) !important;
+}
+/* custom.css */
+.text-default {
+  text-align: center; /* Default text alignment */
+}
+.text-default .list-group-item:last-child {
+  text-justify: auto;
+  text-align: left;
+  padding: 0.25em;
+}
