@@ -74,3 +74,9 @@ table th {
   font-size: 0.5em;
   font-style: italic;
 }
+
+.arrow-button {
+  font-size: 3em;
+  color: rgb(18, 17, 23);
+  background-color: transparent;
+}

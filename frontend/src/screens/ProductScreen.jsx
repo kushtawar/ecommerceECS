@@ -1,4 +1,9 @@
 import React from 'react';
+import {
+  FaArrowCircleLeft,
+  FaArrowLeft,
+  FaChevronCircleLeft,
+} from 'react-icons/fa';
 import products from '../products';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -20,15 +25,6 @@ const ProductScreen = () => {
   console.log(product);
   return (
     <>
-      <div className="d-flex justify-content-center">
-        <Link
-          className="btn btn-light d-flex justify-content-center my-3 "
-          to="/"
-        >
-          Go Back
-        </Link>
-      </div>
-
       <Row>
         <Col md={5}>
           <Image src={product.image} alt={product.name} fluid />
@@ -88,6 +84,11 @@ const ProductScreen = () => {
               </ListGroup.Item>
             </ListGroup>
           </Card>
+          <div className="d-flex justify-content-center">
+            <Link to="/">
+              <FaChevronCircleLeft className="arrow-button my-3"></FaChevronCircleLeft>
+            </Link>
+          </div>
         </Col>
       </Row>
     </>
