@@ -80,3 +80,8 @@ table th {
   color: rgb(18, 17, 23);
   background-color: transparent;
 }
+.img-50x50 {
+  max-width: 100%; /* Allow the image to resize based on content */
+  max-height: 30px; /* Set your desired max height */
+  margin-right: 15px;
+}
