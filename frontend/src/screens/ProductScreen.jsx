@@ -1,10 +1,11 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
 import {
   FaArrowCircleLeft,
   FaArrowLeft,
   FaChevronCircleLeft,
 } from 'react-icons/fa';
-import products from '../products';
+
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Rating from '../components/Rating';
@@ -18,10 +19,21 @@ import {
   Form,
   ListGroupItem,
 } from 'react-bootstrap';
+import axios from 'axios';
 
 const ProductScreen = () => {
+  const [product, setProduct] = useState([]);
+
   const { id: productId } = useParams();
-  const product = products.find((p) => p._id === productId);
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const { data } = await axios.get('/api/products/${productId}');
+      setProduct(data);
+    };
+    fetchProduct();
+  }, [productId]);
+
+  //const product = products.find((p) => p._id === productId);
   console.log(product);
   return (
     <>
