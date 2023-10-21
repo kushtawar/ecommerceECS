@@ -11,7 +11,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node seeder",
     "data:destroy": "node seeder -d",
-    "build": "npm install"
+    "build": "npm install && npm install --prefix ../frontend && npm run build --prefix ../frontend"
   },
   "repository": {
     "type": "git",
