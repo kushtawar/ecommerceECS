@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  frontend:
+    build:
+      context: ./frontend # Use the current directory as the build context (where your Dockerfile is)
+      dockerfile: Dockerfile # Name of your Dockerfile
+    ports:
+      - '8080:80' # Map port 80 from the container to port 8080 on your local machine
+    networks:
+      - app-network
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend # The relative path to your backend code
+      dockerfile: Dockerfile # Name of your backend Dockerfile
+    ports:
+      - '5000:5000' # Map port 5000 from the container to port 5000 on your local machine
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

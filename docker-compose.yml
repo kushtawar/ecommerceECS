@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  frontend:
+    build:
+      context: ./frontend # Use the current directory as the build context (where your Dockerfile is)
+      dockerfile: Dockerfile # Name of your Dockerfile
+    volumes:
+      - /app/node_modules
+      - ./frontend:/app
+
+  backend:
+    build:
+      context: ./backend # The relative path to your backend code
+      dockerfile: Dockerfile # Name of your backend Dockerfile
+    volumes:
+      - /app/node_modules
+      - ./backend:/app
+
+networks:
+  app-network:
+    driver: bridge

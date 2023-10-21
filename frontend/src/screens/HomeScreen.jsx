@@ -18,7 +18,7 @@ const HomeScreen = () => {
       ) : (
         <>
           <h1 className="screenmainheader wincobold text-center">
-            Latest Products
+            Latest Products on Offer
           </h1>
           <Row>
             {products.map((product) => (
