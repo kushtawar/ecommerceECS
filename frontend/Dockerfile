@@ -23,7 +23,7 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /app/build /usr/share/nginx/html
 
 # # Expose port 3000 for the Nginx server
-EXPOSE 3000
+EXPOSE 80
 
 # # Start Nginx and serve your built React application
 CMD ["nginx", "-g", "daemon off;"]
